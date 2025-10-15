@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rokuzen</title>
+  <link rel="stylesheet" href="./botao-iniciar.css">
+</head>
+<body>
+  <header>
+    <!--Logo Rokuzen-->
+    <img src="logorokuzen.png" alt="Logo Roku Zen" class="logo">
+    <!--Usuario-->
+    <img src="usericon.png" alt="Ícone de usuário" class="user-icon">
+  </header>
+
+  <main>
+    <div class="content">
+      <!--Temporizador-->
+      <div id="timer">00:00</div>
+      <!--Botao de iniciar-->
+      <button id="start-btn">Iniciar</button>
+    </div>
+  </main>
+
+  <script>
+    //Script de temporizador
+    let seconds = 0;
+    let timer;
+    const timerDisplay = document.getElementById('timer');
+    const startBtn = document.getElementById('start-btn');
+
+    startBtn.addEventListener('click', () => {
+      if (timer) clearInterval(timer);
+      seconds = 0;
+      timer = setInterval(() => {
+        seconds++;
+        const min = String(Math.floor(seconds / 60)).padStart(2, '0');
+        const sec = String(seconds % 60).padStart(2, '0');
+        timerDisplay.textContent = `${min}:${sec}`;
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
