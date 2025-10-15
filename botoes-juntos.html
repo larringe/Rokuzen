@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rokuzen</title>
+    <link rel="stylesheet" href="./botoes-juntos.css">
+
+</head>
+<body>
+
+    <header>
+        <img src="logorokuzen.png" alt="Logo RokuZen" class="logo">
+
+            <img src="usericon.png" alt="Usuário" class="user-icon">
+        </div>
+    </header>
+
+    <main>
+        <div class="timer">00:00</div>
+
+        <div class="buttons">
+            <button id="startBtn">Iniciar</button>
+            <button id="stopBtn">Terminar</button>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 Rokuzen - Todos os direitos reservados
+    </footer>
+
+    <script>
+        // Script simples para o temporizador (opcional)
+        let timerDisplay = document.querySelector('.timer');
+        let startBtn = document.getElementById('startBtn');
+        let stopBtn = document.getElementById('stopBtn');
+        let timer;
+        let seconds = 0;
+
+        function updateDisplay() {
+            let mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+            let secs = String(seconds % 60).padStart(2, '0');
+            timerDisplay.textContent = `${mins}:${secs}`;
+        }
+
+        startBtn.onclick = () => {
+            clearInterval(timer);
+            timer = setInterval(() => {
+                seconds++;
+                updateDisplay();
+            }, 1000);
+        };
+
+        stopBtn.onclick = () => clearInterval(timer);
+    </script>
+
+</body>
+</html>
