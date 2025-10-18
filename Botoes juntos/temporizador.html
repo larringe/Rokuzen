@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rokuzen</title>
+    <link rel="stylesheet" href="./temporizador.css">
+
+</head>
+<body>
+
+    <header>
+        <img src="logorokuzen.png" alt="Logo Rokuzen" class="logo">
+
+        <!--Esse "Perfil.html" leva ate a pagina de editar o perfil (trocar pela pagina verdadeira (se tiver))-->
+        <a href="perfil.html">
+        <img src="usericon.png" alt="Editar perfil" class="user-icon">
+        </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+      <div id="timer">00:00</div>
+      <div class="button-container">
+        <button id="startBtn">Iniciar</button>
+        <button id="stopBtn">Terminar</button>
+      </div>
+    </div>
+    <div id="notification" class="hidden"></div>
+    </main>
+
+
+    <script>
+        let startTime;
+    let timerInterval;
+
+    const timerDisplay = document.getElementById('timer');
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const notification = document.getElementById('notification');
+
+    function formatTime(seconds) {
+      const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+      const s = (seconds % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    startBtn.addEventListener('click', () => {
+      startTime = Date.now();
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+        timerDisplay.textContent = formatTime(elapsed);
+      }, 1000);
+    });
+
+    //Mostra o tempo que foi contado e depois de 5 segundos leva até a página de atendimento encerrado.
+    stopBtn.addEventListener('click', () => {
+      clearInterval(timerInterval);
+      const totalSeconds = Math.floor((Date.now() - startTime) / 1000) || 0;
+      const formattedTime = formatTime(totalSeconds);
+
+      notification.textContent = `⏱ Tempo total: ${formattedTime}`;
+      notification.classList.remove('hidden');
+      notification.classList.add('show');
+
+      // Em caso de modificação do nome da página de atendimento, será necessário modificar o href:
+      setTimeout(() => {
+        window.location.href = "atendimento_encerrado.html";
+      }, 5000);
+    });
+    </script>
+
+</body>
+</html>

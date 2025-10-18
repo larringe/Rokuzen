@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório</title>
+  <link rel="stylesheet" href="relatorio.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <img src="logorokuzen.png" alt="Logo Rokuzen">
+    <nav>
+      <a href="#">Unidade</a>
+      <a href="#">Agendamento</a>
+      <a href="#">Salas</a>
+      <a href="#">Minha Escala</a>
+    </nav>
+  </header>
+
+  <h1>RELATÓRIO</h1>
+
+  <div class="container relatorio-container">
+    <p>
+      <label>Data: <input type="date" id="data"></label>
+      <label>Horário: <input type="time" id="hora"></label>
+    </p>
+
+    <p>
+  <label>Serviço:
+    <select id="servico">
+      <option value="Quick Massage">Quick Massage</option>
+      <option value="Maca">Maca</option>
+      <option value="Tatami">Tatami</option>
+      <option value="Reflexologia Podal">Reflexologia Podal</option>
+      <option value="Auricoloterapia">Auricoloterapia</option>
+    </select>
+  </label>
+
+  <label>Unidade:
+    <select id="unidade">
+      <option value="Grand Plaza / Santo André">Grand Plaza / Santo André</option>
+      <option value="West Plaza / Santo André">West Plaza / São Paulo</option>
+      <option value="Mooca Plaza / São Paulo">Mooca Plaza / São Paulo</option>
+      <option value="Golden Square / São Bernardo">Golden Square / São Bernardo</option>
+    </select>
+  </label>
+</p>
+
+    <textarea id="texto" placeholder="Digite aqui..."></textarea>
+
+    <footer>
+      <button onclick="salvarRelatorio()">salvar</button>
+      <button onclick="window.location.href='relatorios.html'">voltar</button>
+    </footer>
+  </div>
+</body>
+</html>

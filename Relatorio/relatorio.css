@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  background-color: #fdfdf6;
+  margin: 0;
+  padding: 0;
+  color: #2e2e2e;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+}
+
+header img {
+  height: 45px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #2e2e2e;
+  font-size: 14px;
+}
+
+h1 {
+  color: #3b4e0a;
+  font-size: 40px;
+  margin-left: 40px;
+}
+
+.container {
+  padding: 20px 40px;
+}
+
+.card {
+  background-color: #4a610f;
+  color: #fdfdf6;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 10px 0;
+  width: 400px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+button {
+  background-color: #4a610f;
+  color: #fdfdf6;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 30px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #3b4e0a;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+/* Relatório individual */
+.relatorio-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4a610f;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px;
+  resize: none;
+}
+
+input {
+  background-color: #dce5c1;
+  border: none;
+  border-radius: 6px;
+  padding: 6px;
+  margin: 4px;
+  font-size: 14px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 900px;
+}
+select {
+  background-color: #dce5c1;
+  border: none;
+  border-radius: 6px;
+  padding: 6px;
+  margin: 4px;
+  font-size: 14px;
+}
+
